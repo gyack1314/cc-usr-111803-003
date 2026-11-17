@@ -1,0 +1,24 @@
+{
+  "roles": [
+    "plant_roster",
+    "daily_slaughter"
+  ],
+  "relation_field": "company_id",
+  "required_fields": {
+    "plant_roster": [
+      "company_id",
+      "effective_from",
+      "state"
+    ],
+    "daily_slaughter": [
+      "company_id",
+      "observed_on",
+      "slaughter_heads"
+    ]
+  },
+  "source_identity": [
+    "kind",
+    "id",
+    "revision"
+  ]
+}

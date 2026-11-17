@@ -2,7 +2,7 @@
   "kind": "plant_roster",
   "id": "plant_roster-A",
   "revision": "v1",
-  "period": "2026-11-13",
-  "subject": "sample-A",
-  "state": "published"
+  "company_id": "plant-A",
+  "effective_from": "2026-11-09",
+  "state": "active"
 }
