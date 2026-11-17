@@ -1,0 +1,33 @@
+{
+  "allowed_origins": [
+    "https://local-source-003.example.test"
+  ],
+  "steps": [
+    {
+      "request": {
+        "method": "GET",
+        "url": "https://local-source-003.example.test/records/plant_roster-A",
+        "body_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "response": {
+        "file": "source-1.bin",
+        "status": 200,
+        "bytes": 149,
+        "sha256": "adc65b525361a70b6389e150a155fdb38c933b383401bfba1976a7984aa37ce6"
+      }
+    },
+    {
+      "request": {
+        "method": "GET",
+        "url": "https://local-source-003.example.test/records/plant_roster-A",
+        "body_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "response": {
+        "file": "source-conflict.bin",
+        "status": 200,
+        "bytes": 154,
+        "sha256": "828ebe6ca955c417e82c9ee1f2cb2493ad3eaad94bab0549ac76d88e27f11473"
+      }
+    }
+  ]
+}
