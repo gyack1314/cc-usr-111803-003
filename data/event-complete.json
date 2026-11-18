@@ -1,0 +1,37 @@
+{
+  "allowed_origins": [
+    "https://local-source-003.example.test"
+  ],
+  "sources": [
+    {
+      "url": "https://local-source-003.example.test/records/plant_roster-A",
+      "kind": "plant_roster",
+      "required": true
+    },
+    {
+      "url": "https://local-source-003.example.test/records/daily_slaughter-B",
+      "kind": "daily_slaughter",
+      "required": true
+    },
+    {
+      "url": "https://local-source-003.example.test/records/weekly_summary-A",
+      "kind": "weekly_summary",
+      "required": true
+    }
+  ],
+  "steps": [
+    {
+      "request": {
+        "method": "GET",
+        "url": "https://local-source-003.example.test/records/weekly_summary-A",
+        "body_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "response": {
+        "file": "source-event.bin",
+        "status": 200,
+        "bytes": 212,
+        "sha256": "c597e78a994a0c62ab0632b8a6f14cd2f0f94598e397b421405cc0ab6ea52197"
+      }
+    }
+  ]
+}

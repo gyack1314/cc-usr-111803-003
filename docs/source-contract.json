@@ -1,7 +1,8 @@
 {
   "roles": [
     "plant_roster",
-    "daily_slaughter"
+    "daily_slaughter",
+    "weekly_summary"
   ],
   "relation_field": "company_id",
   "required_fields": {
@@ -13,6 +14,13 @@
     "daily_slaughter": [
       "company_id",
       "observed_on",
+      "slaughter_heads"
+    ],
+    "weekly_summary": [
+      "company_id",
+      "week_start",
+      "week_end",
+      "basis",
       "slaughter_heads"
     ]
   },

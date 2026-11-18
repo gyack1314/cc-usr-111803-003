@@ -1,0 +1,23 @@
+{
+  "allowed_origins": [
+    "https://local-source-003.example.test"
+  ],
+  "sources": [
+    {
+      "url": "https://local-source-003.example.test/records/plant_roster-A",
+      "kind": "plant_roster",
+      "required": true
+    },
+    {
+      "url": "https://local-source-003.example.test/records/daily_slaughter-B",
+      "kind": "daily_slaughter",
+      "required": true
+    },
+    {
+      "url": "https://local-source-003.example.test/records/weekly_summary-A",
+      "kind": "weekly_summary",
+      "required": true
+    }
+  ],
+  "steps": []
+}
