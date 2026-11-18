@@ -29,5 +29,17 @@
         "sha256": "72733b221070b9c27559ad8abbe68b5a032e1c0d401748b91b6cb82aa4bd4f6b"
       }
     }
+  ],
+  "sources": [
+    {
+      "url": "https://local-source-003.example.test/records/plant_roster-A",
+      "kind": "plant_roster",
+      "required": true
+    },
+    {
+      "url": "https://local-source-003.example.test/records/daily_slaughter-B",
+      "kind": "daily_slaughter",
+      "required": true
+    }
   ]
 }
