@@ -1,0 +1,12 @@
+{
+  "allowed_origins": ["https://local-source-003.example.test"],
+  "steps": [
+    {"request":{"method":"GET","url":"https://local-source-003.example.test/records/daily_slaughter-C","body_sha256":"e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"},"response":{"file":"daily-page2-v1.bin","status":200,"bytes":1370,"sha256":"01d45fd2c0973ef037b672d1c964bd049ccacb56b981db35da70d2360cb8d190"}}
+  ],
+  "sources": [
+    {"url":"https://local-source-003.example.test/records/plant_roster-A","kind":"plant_roster","required":true,"expected_revision":"v2"},
+    {"url":"https://local-source-003.example.test/records/daily_slaughter-B","kind":"daily_slaughter","required":true,"expected_revision":"v2"},
+    {"url":"https://local-source-003.example.test/records/daily_slaughter-C","kind":"daily_slaughter","required":true,"expected_revision":"v1"},
+    {"url":"https://local-source-003.example.test/records/weekly_summary-A","kind":"weekly_summary","required":true,"expected_revision":"v2"}
+  ]
+}

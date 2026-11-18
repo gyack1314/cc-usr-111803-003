@@ -1,0 +1,17 @@
+{
+  "kind": "daily_slaughter",
+  "id": "daily_slaughter-C",
+  "revision": "v1",
+  "week_start": "2026-11-09",
+  "week_end": "2026-11-15",
+  "records": [
+    {"record_id":"plant-A:2026-11-12","record_version":"v1","company_id":"plant-A","observed_on":"2026-11-12","slaughter_heads":1000,"basis":"actual"},
+    {"record_id":"plant-B:2026-11-12","record_version":"v1","company_id":"plant-B","observed_on":"2026-11-12","slaughter_heads":900,"basis":"actual"},
+    {"record_id":"plant-A:2026-11-13","record_version":"v1","company_id":"plant-A","observed_on":"2026-11-13","slaughter_heads":1000,"basis":"actual"},
+    {"record_id":"plant-B:2026-11-13","record_version":"v1","company_id":"plant-B","observed_on":"2026-11-13","slaughter_heads":900,"basis":"actual"},
+    {"record_id":"plant-A:2026-11-14","record_version":"v1","company_id":"plant-A","observed_on":"2026-11-14","slaughter_heads":1000,"basis":"actual"},
+    {"record_id":"plant-B:2026-11-14","record_version":"v1","company_id":"plant-B","observed_on":"2026-11-14","slaughter_heads":900,"basis":"actual"},
+    {"record_id":"plant-A:2026-11-15","record_version":"v1","company_id":"plant-A","observed_on":"2026-11-15","slaughter_heads":1000,"basis":"actual"},
+    {"record_id":"plant-B:2026-11-15","record_version":"v1","company_id":"plant-B","observed_on":"2026-11-15","slaughter_heads":900,"basis":"actual"}
+  ]
+}
