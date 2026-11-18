@@ -1,0 +1,32 @@
+{
+  "allowed_origins": [
+    "https://local-source-003.example.test"
+  ],
+  "sources": [
+    {
+      "url": "https://local-source-003.example.test/records/plant_roster-A",
+      "kind": "plant_roster",
+      "required": true
+    },
+    {
+      "url": "https://local-source-003.example.test/records/daily_slaughter-B",
+      "kind": "daily_slaughter",
+      "required": true
+    }
+  ],
+  "steps": [
+    {
+      "request": {
+        "method": "GET",
+        "url": "https://local-source-003.example.test/records/plant_roster-A",
+        "body_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "response": {
+        "file": "source-revised.bin",
+        "status": 200,
+        "bytes": 156,
+        "sha256": "37af8d0b859ac6221fc29f29250465d754f3373876b1e903b36d9637042254cb"
+      }
+    }
+  ]
+}
