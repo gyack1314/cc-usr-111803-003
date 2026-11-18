@@ -7,20 +7,18 @@
   "relation_field": "company_id",
   "required_fields": {
     "plant_roster": [
-      "company_id",
-      "effective_from",
-      "state"
+      "plants"
     ],
     "daily_slaughter": [
-      "company_id",
-      "observed_on",
-      "slaughter_heads"
+      "week_start",
+      "week_end",
+      "records"
     ],
     "weekly_summary": [
-      "company_id",
       "week_start",
       "week_end",
       "basis",
+      "scope",
       "slaughter_heads"
     ]
   },

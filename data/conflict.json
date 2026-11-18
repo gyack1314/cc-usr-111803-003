@@ -1,33 +1,7 @@
 {
-  "allowed_origins": [
-    "https://local-source-003.example.test"
-  ],
+  "allowed_origins": ["https://local-source-003.example.test"],
   "steps": [
-    {
-      "request": {
-        "method": "GET",
-        "url": "https://local-source-003.example.test/records/plant_roster-A",
-        "body_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
-      },
-      "response": {
-        "file": "source-1.bin",
-        "status": 200,
-        "bytes": 156,
-        "sha256": "d981b259029a0a51a7f1636b48aaeb448666ed54c28811654946ce1b51806520"
-      }
-    },
-    {
-      "request": {
-        "method": "GET",
-        "url": "https://local-source-003.example.test/records/plant_roster-A",
-        "body_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
-      },
-      "response": {
-        "file": "source-conflict.bin",
-        "status": 200,
-        "bytes": 189,
-        "sha256": "2734215b4f867d7656f75f1fd940e85ce518a63a75ebce4e20442787eeec3fa6"
-      }
-    }
+    {"request":{"method":"GET","url":"https://local-source-003.example.test/records/plant_roster-A","body_sha256":"e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"},"response":{"file":"roster-v1.bin","status":200,"bytes":352,"sha256":"8a94fbc84ab2591cb57cd665be5af73b1933e7e8152d3f397ca42e395d1a76ce"}},
+    {"request":{"method":"GET","url":"https://local-source-003.example.test/records/plant_roster-A","body_sha256":"e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"},"response":{"file":"roster-conflict.bin","status":200,"bytes":357,"sha256":"fbfa92988d165603652be66eb085331eb468e211b24ef8d6eea8469b89496c6a"}}
   ]
 }

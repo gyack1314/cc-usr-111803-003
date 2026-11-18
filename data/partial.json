@@ -1,34 +1,11 @@
 {
-  "allowed_origins": [
-    "https://local-source-003.example.test"
+  "allowed_origins": ["https://local-source-003.example.test"],
+  "steps": [
+    {"request":{"method":"GET","url":"https://local-source-003.example.test/records/plant_roster-A","body_sha256":"e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"},"response":{"file":"roster-v1.bin","status":200,"bytes":352,"sha256":"8a94fbc84ab2591cb57cd665be5af73b1933e7e8152d3f397ca42e395d1a76ce"}}
   ],
   "sources": [
-    {
-      "url": "https://local-source-003.example.test/records/plant_roster-A",
-      "kind": "plant_roster",
-      "required": true,
-      "expected_revision": "v1"
-    },
-    {
-      "url": "https://local-source-003.example.test/records/daily_slaughter-B",
-      "kind": "daily_slaughter",
-      "required": true,
-      "expected_revision": "v1"
-    }
-  ],
-  "steps": [
-    {
-      "request": {
-        "method": "GET",
-        "url": "https://local-source-003.example.test/records/plant_roster-A",
-        "body_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
-      },
-      "response": {
-        "file": "source-1.bin",
-        "status": 200,
-        "bytes": 156,
-        "sha256": "d981b259029a0a51a7f1636b48aaeb448666ed54c28811654946ce1b51806520"
-      }
-    }
+    {"url":"https://local-source-003.example.test/records/plant_roster-A","kind":"plant_roster","required":true,"expected_revision":"v1"},
+    {"url":"https://local-source-003.example.test/records/daily_slaughter-B","kind":"daily_slaughter","required":true,"expected_revision":"v1"},
+    {"url":"https://local-source-003.example.test/records/weekly_summary-A","kind":"weekly_summary","required":true,"expected_revision":"v1"}
   ]
 }

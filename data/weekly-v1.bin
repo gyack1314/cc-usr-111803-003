@@ -1,0 +1,10 @@
+{
+  "kind": "weekly_summary",
+  "id": "weekly_summary-A",
+  "revision": "v1",
+  "week_start": "2026-11-09",
+  "week_end": "2026-11-15",
+  "basis": "actual",
+  "scope": ["plant-A", "plant-B"],
+  "slaughter_heads": 13300
+}

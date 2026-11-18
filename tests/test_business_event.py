@@ -4,7 +4,7 @@ import unittest
 from pathlib import Path
 from capture_service.collection import collect,coverage
 from capture_service.ledger import connect,entities
-from capture_service.archive import release,get
+from capture_service.archive import release,release_verified,get
 
 ROOT=Path(__file__).resolve().parents[1]
 COLLECTION='111803-003'
@@ -19,12 +19,17 @@ class BusinessEvent(unittest.TestCase):
             collect(c,COLLECTION,ROOT/'data'/'event-pending.json')
             pending=coverage(c,COLLECTION)
             self.assertEqual(pending['expected'],3)
-            self.assertEqual(pending['received'],2)
-            self.assertEqual(len(pending['missing_required']),1)
+            self.assertEqual(pending['received'],3)
+            self.assertEqual(len(pending['stale_required']),2)
+            with self.assertRaises(ValueError):
+                release_verified(c,COLLECTION)
             collect(c,COLLECTION,ROOT/'data'/'event-complete.json')
             complete=coverage(c,COLLECTION)
             self.assertEqual(complete['received'],3)
             self.assertFalse(complete['missing_required'])
-            self.assertEqual(len(entities(c,COLLECTION)),3)
+            self.assertFalse(complete['stale_required'])
+            self.assertEqual(len(entities(c,COLLECTION)),5)
+            revised=release_verified(c,COLLECTION)
+            self.assertEqual(get(c,COLLECTION,revised)['slaughter_week']['status'],'可核实')
             self.assertEqual(get(c,COLLECTION,original),before)
             c.close()

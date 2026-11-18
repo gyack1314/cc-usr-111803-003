@@ -20,8 +20,9 @@ class RevisionFrontier(unittest.TestCase):
             self.assertEqual(c.execute(
                 'SELECT expected_revision FROM collection_sources WHERE collection=? AND source_kind=?',
                 ('sample', 'plant_roster')).fetchone()[0], 'v2')
-            self.assertEqual(coverage(c,'sample')['unverified_required'],[])
+            self.assertTrue(coverage(c,'sample')['stale_required'])
             self.assertTrue(overview(c,'sample')['publishable'])
-            release_verified(c,'sample')
+            with self.assertRaises(ValueError):
+                release_verified(c,'sample')
             self.assertEqual(get(c,'sample',old),frozen)
             c.close()

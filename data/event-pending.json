@@ -1,26 +1,9 @@
 {
-  "allowed_origins": [
-    "https://local-source-003.example.test"
-  ],
+  "allowed_origins": ["https://local-source-003.example.test"],
+  "steps": [],
   "sources": [
-    {
-      "url": "https://local-source-003.example.test/records/plant_roster-A",
-      "kind": "plant_roster",
-      "required": true,
-      "expected_revision": "v1"
-    },
-    {
-      "url": "https://local-source-003.example.test/records/daily_slaughter-B",
-      "kind": "daily_slaughter",
-      "required": true,
-      "expected_revision": "v1"
-    },
-    {
-      "url": "https://local-source-003.example.test/records/weekly_summary-A",
-      "kind": "weekly_summary",
-      "required": true,
-      "expected_revision": "v1"
-    }
-  ],
-  "steps": []
+    {"url":"https://local-source-003.example.test/records/plant_roster-A","kind":"plant_roster","required":true,"expected_revision":"v2"},
+    {"url":"https://local-source-003.example.test/records/daily_slaughter-B","kind":"daily_slaughter","required":true,"expected_revision":"v1"},
+    {"url":"https://local-source-003.example.test/records/weekly_summary-A","kind":"weekly_summary","required":true,"expected_revision":"v2"}
+  ]
 }

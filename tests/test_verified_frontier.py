@@ -13,7 +13,7 @@ class VerifiedFrontier(unittest.TestCase):
         with tempfile.TemporaryDirectory() as directory:
             c=connect(Path(directory)/'state.sqlite3')
             collect(c,'sample',ROOT/'data'/'partial.json')
-            self.assertEqual(len(coverage(c,'sample')['unverified_required']),2)
+            self.assertEqual(len(coverage(c,'sample')['unverified_required']),3)
             with self.assertRaises(ValueError):release_verified(c,'sample')
             collect(c,'sample',ROOT/'data'/'normal.json')
             self.assertEqual(coverage(c,'sample')['unverified_required'],[])

@@ -59,25 +59,35 @@ def coverage(connection, collection):
     """区分来源接收进度与已核实的业务资料范围。"""
     initialize(connection)
     rows = connection.execute(
-        'SELECT s.source_url,s.source_kind,s.required,COUNT(p.body_sha256) '
+        'SELECT s.source_url,s.source_kind,s.required,s.expected_revision,COUNT(p.body_sha256) '
         'FROM collection_sources s LEFT JOIN collection_progress p '
         'ON p.collection=s.collection AND p.source_url=s.source_url '
         'WHERE s.collection=? GROUP BY s.source_url,s.source_kind,s.required ORDER BY s.source_url',
         (collection,)).fetchall()
     view = assess(entities(connection, collection))
-    verified = {source for pair in view['matched_pairs']
-                for source in (pair['left_source'], pair['right_source'])}
+    verified = {source for pair in view['matched_pairs'] for source in pair.values()}
     sources = []
-    for url, kind, required, received in rows:
+    domain_rows = entities(connection, collection)
+    for url, kind, required, expected_revision, received in rows:
+        source_digests = {digest for digest, in connection.execute(
+            'SELECT p.body_sha256 FROM collection_progress p JOIN receipts r '
+            'ON r.collection=p.collection AND r.body_sha256=p.body_sha256 '
+            'WHERE p.collection=? AND p.source_url=? AND r.source_url=?',
+            (collection, url, url))}
+        source_entities = [item for item in domain_rows if item['source'] in source_digests]
+        versions = [item['version'] for item in source_entities]
+        current_revision_received = not expected_revision or expected_revision in versions
         sources.append(dict(url=url, kind=kind, required=bool(required),
+                            expected_revision=expected_revision,
                             received_versions=received,
-                            verified=any(digest in verified for digest, in connection.execute(
-                                'SELECT p.body_sha256 FROM collection_progress p JOIN receipts r '
-                                'ON r.collection=p.collection AND r.body_sha256=p.body_sha256 '
-                                'WHERE p.collection=? AND p.source_url=? AND r.source_url=p.source_url',
-                                (collection, url)))))
-    return {'expected': len(rows), 'received': sum(bool(row[3]) for row in rows),
-            'missing_required': [row[0] for row in rows if row[2] and not row[3]],
+                            entity_versions=versions,
+                            current_revision_received=current_revision_received,
+                            verified=any(item['source'] in verified for item in source_entities)
+                                     and current_revision_received))
+    return {'expected': len(rows), 'received': sum(bool(row[4]) for row in rows),
+            'missing_required': [row[0] for row in rows if row[2] and not row[4]],
+            'stale_required': [item['url'] for item in sources if item['required'] and
+                               item['received_versions'] and not item['current_revision_received']],
             'unverified_required': [item['url'] for item in sources
                                     if item['required'] and not item['verified']],
             'sources': sources}

@@ -1,47 +1,22 @@
 {
-  "allowed_origins": [
-    "https://local-source-003.example.test"
-  ],
+  "allowed_origins": ["https://local-source-003.example.test"],
   "steps": [
     {
-      "request": {
-        "method": "GET",
-        "url": "https://local-source-003.example.test/records/plant_roster-A",
-        "body_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
-      },
-      "response": {
-        "file": "source-1.bin",
-        "status": 200,
-        "bytes": 156,
-        "sha256": "d981b259029a0a51a7f1636b48aaeb448666ed54c28811654946ce1b51806520"
-      }
+      "request": {"method": "GET", "url": "https://local-source-003.example.test/records/plant_roster-A", "body_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"},
+      "response": {"file": "roster-v1.bin", "status": 200, "bytes": 352, "sha256": "8a94fbc84ab2591cb57cd665be5af73b1933e7e8152d3f397ca42e395d1a76ce"}
     },
     {
-      "request": {
-        "method": "GET",
-        "url": "https://local-source-003.example.test/records/daily_slaughter-B",
-        "body_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
-      },
-      "response": {
-        "file": "source-2.bin",
-        "status": 200,
-        "bytes": 165,
-        "sha256": "72733b221070b9c27559ad8abbe68b5a032e1c0d401748b91b6cb82aa4bd4f6b"
-      }
+      "request": {"method": "GET", "url": "https://local-source-003.example.test/records/daily_slaughter-B", "body_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"},
+      "response": {"file": "daily-week.bin", "status": 200, "bytes": 1607, "sha256": "34444b882df269e00cd8bc6e2739b16407d0e8de3201b9f65807497417ccf39c"}
+    },
+    {
+      "request": {"method": "GET", "url": "https://local-source-003.example.test/records/weekly_summary-A", "body_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"},
+      "response": {"file": "weekly-v1.bin", "status": 200, "bytes": 221, "sha256": "1f512e235730bbb1685d8b91e2742d9d51bc53b34ab2916deeb1a34416f08ad3"}
     }
   ],
   "sources": [
-    {
-      "url": "https://local-source-003.example.test/records/plant_roster-A",
-      "kind": "plant_roster",
-      "required": true,
-      "expected_revision": "v1"
-    },
-    {
-      "url": "https://local-source-003.example.test/records/daily_slaughter-B",
-      "kind": "daily_slaughter",
-      "required": true,
-      "expected_revision": "v1"
-    }
+    {"url": "https://local-source-003.example.test/records/plant_roster-A", "kind": "plant_roster", "required": true, "expected_revision": "v1"},
+    {"url": "https://local-source-003.example.test/records/daily_slaughter-B", "kind": "daily_slaughter", "required": true, "expected_revision": "v1"},
+    {"url": "https://local-source-003.example.test/records/weekly_summary-A", "kind": "weekly_summary", "required": true, "expected_revision": "v1"}
   ]
 }

@@ -1,0 +1,12 @@
+{
+  "kind": "plant_roster",
+  "id": "plant_roster-A",
+  "revision": "v2",
+  "effective_from": "2026-11-09",
+  "state": "active",
+  "plants": [
+    {"company_id": "plant-A", "state": "merged", "successor_id": "plant-C", "effective_on": "2026-11-12"},
+    {"company_id": "plant-B", "state": "merged", "successor_id": "plant-C", "effective_on": "2026-11-12"},
+    {"company_id": "plant-C", "state": "active", "successor_id": null, "effective_on": "2026-11-12"}
+  ]
+}

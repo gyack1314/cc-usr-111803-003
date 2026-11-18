@@ -1,4 +1,4 @@
-"""初版双来源业务关联可以通过现有采集与发布操作读取。"""
+"""名录、逐日公告和周报可以形成可发布的初始业务范围。"""
 import tempfile
 import unittest
 from pathlib import Path
@@ -19,6 +19,11 @@ class InitialBusinessFlow(unittest.TestCase):
             self.assertTrue(state['publishable'])
             self.assertEqual(len(state['matched_pairs']),1)
             self.assertFalse(state['coverage']['missing_required'])
+            self.assertEqual(state['slaughter_week']['status'], '可核实')
+            self.assertEqual(state['slaughter_week']['actual_heads'], 13300)
+            self.assertEqual([(p['company_id'], len(p['actual_days']))
+                              for p in state['slaughter_week']['plants']],
+                             [('plant-A', 7), ('plant-B', 7)])
             revision=release_verified(c,COLLECTION)
             self.assertEqual(get(c,COLLECTION,revision),state)
             c.close()

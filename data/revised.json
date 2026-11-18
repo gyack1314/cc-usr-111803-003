@@ -1,34 +1,12 @@
 {
-  "allowed_origins": [
-    "https://local-source-003.example.test"
+  "allowed_origins": ["https://local-source-003.example.test"],
+  "steps": [
+    {"request":{"method":"GET","url":"https://local-source-003.example.test/records/plant_roster-A","body_sha256":"e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"},"response":{"file":"roster-v2.bin","status":200,"bytes":464,"sha256":"b652125d6e46097ccfd9662299c021bf83d8e9b8b1509bd0de39d0584adb68f3"}},
+    {"request":{"method":"GET","url":"https://local-source-003.example.test/records/weekly_summary-A","body_sha256":"e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"},"response":{"file":"weekly-v2.bin","status":200,"bytes":232,"sha256":"6fd0feccb3adc11415c895cf2711cff4a32d37778dfe1353c31e300dc2a84eb9"}}
   ],
   "sources": [
-    {
-      "url": "https://local-source-003.example.test/records/plant_roster-A",
-      "kind": "plant_roster",
-      "required": true,
-      "expected_revision": "v2"
-    },
-    {
-      "url": "https://local-source-003.example.test/records/daily_slaughter-B",
-      "kind": "daily_slaughter",
-      "required": true,
-      "expected_revision": "v1"
-    }
-  ],
-  "steps": [
-    {
-      "request": {
-        "method": "GET",
-        "url": "https://local-source-003.example.test/records/plant_roster-A",
-        "body_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
-      },
-      "response": {
-        "file": "source-revised.bin",
-        "status": 200,
-        "bytes": 156,
-        "sha256": "37af8d0b859ac6221fc29f29250465d754f3373876b1e903b36d9637042254cb"
-      }
-    }
+    {"url":"https://local-source-003.example.test/records/plant_roster-A","kind":"plant_roster","required":true,"expected_revision":"v2"},
+    {"url":"https://local-source-003.example.test/records/daily_slaughter-B","kind":"daily_slaughter","required":true,"expected_revision":"v1"},
+    {"url":"https://local-source-003.example.test/records/weekly_summary-A","kind":"weekly_summary","required":true,"expected_revision":"v2"}
   ]
 }
