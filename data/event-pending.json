@@ -6,17 +6,20 @@
     {
       "url": "https://local-source-003.example.test/records/plant_roster-A",
       "kind": "plant_roster",
-      "required": true
+      "required": true,
+      "expected_revision": "v1"
     },
     {
       "url": "https://local-source-003.example.test/records/daily_slaughter-B",
       "kind": "daily_slaughter",
-      "required": true
+      "required": true,
+      "expected_revision": "v1"
     },
     {
       "url": "https://local-source-003.example.test/records/weekly_summary-A",
       "kind": "weekly_summary",
-      "required": true
+      "required": true,
+      "expected_revision": "v1"
     }
   ],
   "steps": []
